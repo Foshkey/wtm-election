@@ -1,11 +1,11 @@
 {
-  "name": "mean-seed",
-  "version": "0.0.0",
-  "description": "Seed project for MEAN Stack",
+  "name": "wtm-election",
+  "version": "0.1.0",
+  "description": "Election Website for Warp To Me Incursions",
   "author": "Foshkey",
   "repository": {
     "type": "git",
-    "url": "git://github.com/foshkey/mean-stack"
+    "url": "git://github.com/foshkey/wtm-election"
   },
   "private": true,
   "scripts": {
