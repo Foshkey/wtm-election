@@ -1,10 +1,10 @@
 <nav class="navbar navbar-light bg-faded">
   <div class="container">
-    <a routerLink="/" class="navbar-brand">Eve App</a>
+    <a routerLink="/" class="navbar-brand">WTM Elections</a>
     <div class="nav navbar-nav">
-      <span class="pull-xs-right nav-item nav-link active" *ngIf="character">
+      <span class="float-xs-right nav-item nav-link active" *ngIf="character">
         <span class="profile">
-          <img [src]="portraitUrl" class="img-rounded" />
+          <img [src]="portraitUrl" class="rounded" />
           {{character.CharacterName}}
         </span>
         <a href="{{logoutUrl}}">

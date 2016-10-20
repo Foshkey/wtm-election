@@ -18,7 +18,7 @@ module.exports = (options, data) => {
       res.on('data', chunk => {
 
         // Log it
-        logger.debug(`BODY: ${chunk}`);
+        logger.debug(`Body: ${chunk}`);
 
         // First try json
         try {

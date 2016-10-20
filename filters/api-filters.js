@@ -1,4 +1,5 @@
 let authenticationFilter = require('./security/authentication-filter.js');
+let logger = require('../logger');
 
 module.exports = (req, res, next) => {
 
@@ -12,7 +13,7 @@ module.exports = (req, res, next) => {
 
   // Catch any failures or rejects
   .catch(error => {
-    console.log(error);
+    logger.error(error);
     req.session.destroy();
     res.redirect('/');
   });

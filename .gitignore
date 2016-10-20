@@ -43,3 +43,6 @@ public/stylesheets/vendor
 
 # Typings
 typings
+
+# Sensitive Information
+web/crest-tq/app-info.js

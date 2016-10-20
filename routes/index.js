@@ -19,7 +19,7 @@ router.get('/', (req, res, next) => {
   if (req.session.authData.authenticated) {
 
     // :thumbsup:
-    res.render('index', { title: "Eve App" });
+    res.render('index', { title: "WTM Elections" });
 
   } else {
     

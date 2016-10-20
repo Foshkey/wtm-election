@@ -35,7 +35,10 @@ let morganFormat = {
   userAgent: ':user-agent',
   responseTime: ':response-time'
 };
-app.use(morgan(JSON.stringify(morganFormat), { stream: logger.morganStream }));
+app.use(morgan(JSON.stringify(morganFormat), { 
+  stream: logger.morganStream,
+  skip: (req, res) => req.path.startsWith('/js') && res.statusCode < 400
+}));
 
 logger.debug('Setting up bodyParser & cookieParser');
 app.use(bodyParser.json());
