@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { DragulaService } from 'ng2-dragula/ng2-dragula';
 
 import { CandidateService } from '../common/candidate.service';
 import { Character } from '../models/character';
@@ -16,21 +15,10 @@ export class BallotComponent implements OnInit {
   ballot: Character[] = [];
 
   constructor(
-    private candidateService: CandidateService,
-    private dragulaService: DragulaService
+    private candidateService: CandidateService
   ) { }
 
   ngOnInit() {
     this.candidateService.getCandidates().then(candidates => this.candidates = candidates);
-    this.dragulaService.dropModel.subscribe(value => { this.onDropModel(value.slice(1)); } );
-    this.dragulaService.removeModel.subscribe(value => { this.onRemoveModel(value.slice(1)); } );
-  }
-
-  private onDropModel(args): void {
-    // let [el, target, source] = args;
-  }
-
-  private onRemoveModel(args): void {
-    // let [el, target, source] = args;
   }
 }
