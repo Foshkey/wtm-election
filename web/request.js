@@ -7,18 +7,21 @@ let logger = require('../logger');
 module.exports = (options, data) => {
   return new Promise((resolve, reject) => {
 
+    let logMetadata = {};
+
     // Create Request
     let req = https.request(options, res => {
 
       // Log Status & Headers
-      logger.debug(`Status: ${res.statusCode}`);
-      logger.debug(`Headers: ${JSON.stringify(res.headers)}`);
+      logMetadata.status = res.statusCode;
+      logMetadata.headers = res.headers;
+      logMetadata.message += ` ${res.statusCode}`;
 
       res.setEncoding('utf8');
       res.on('data', chunk => {
 
         // Log it
-        logger.debug(`Body: ${chunk}`);
+        logMetadata.body = chunk
 
         // First try json
         try {
@@ -47,6 +50,7 @@ module.exports = (options, data) => {
       // And in case if successful call with no data
       .on('end', () => {
         logger.debug('Done');
+        logger.info(logMetadata.message, logMetadata);
         resolve();
       });
 
@@ -71,6 +75,10 @@ module.exports = (options, data) => {
     req.end();
 
     // Log it
-    logger.info(`${options.method} ${options.host}${options.path}`, { output: req.output });
+    logMetadata.message = `Server Request: ${options.method} ${options.host}${options.path}`, { output: req.output };
+    logMetadata.method = options.method;
+    logMetadata.host = optioms.host;
+    logMetadata.path = options.path;
+    logMetadata.output = req.output;
   });
 }
