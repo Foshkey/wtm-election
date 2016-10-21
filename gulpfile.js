@@ -42,8 +42,12 @@ gulp.task('vendor', function () {
     .pipe(gulp.dest(vendorJs + '/systemjs'));
   gulp.src('node_modules/bootstrap/**')
     .pipe(gulp.dest(vendorCss + '/bootstrap'));
+  gulp.src('node_modules/dragula/**')
+    .pipe(gulp.dest(vendorJs + '/dragula'));
   gulp.src('node_modules/ng2-bootstrap/**')
     .pipe(gulp.dest(vendorJs + '/ng2-bootstrap'));
+  gulp.src('node_modules/ng2-dragula/**')
+    .pipe(gulp.dest(vendorJs + '/ng2-dragula'));
   gulp.src('node_modules/moment/**')
     .pipe(gulp.dest(vendorJs + '/moment'));
   gulp.src('node_modules/zone.js/**')

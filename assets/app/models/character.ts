@@ -1,4 +1,4 @@
 export class Character {
-  CharacterID: number;
-  CharacterName: string;
+  characterID: number;
+  characterName: string;
 }

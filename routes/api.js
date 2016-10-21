@@ -7,8 +7,8 @@ let logger = require('../logger');
 router.get('/char', (req, res, next) => {
   charService.getChar(req).then(charData => {
     res.json({
-      CharacterID: charData.CharacterID,
-      CharacterName: charData.CharacterName
+      characterID: charData.CharacterID,
+      characterName: charData.CharacterName
     });
   }).catch(error => {
     logger.error(error);

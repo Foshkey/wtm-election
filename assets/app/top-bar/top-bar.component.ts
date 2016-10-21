@@ -21,7 +21,7 @@ export class TopBarComponent implements OnInit {
   ngOnInit() {
     this.characterService.getChar().then(character => {
       this.character = character;
-      this.portraitUrl = `//imageserver.eveonline.com/Character/${this.character.CharacterID}_32.jpg`;
+      this.portraitUrl = `//imageserver.eveonline.com/Character/${this.character.characterID}_32.jpg`;
     });
   }
 }

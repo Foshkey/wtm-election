@@ -1,0 +1,30 @@
+<div class="row" *ngIf="candidates.length > 0">
+
+  <div class="col-xs-6">
+    <div class="card card-block dragula-section">
+      <h4 class="card-title">Candidates</h4>
+      <div class="dragula-container" [dragula]="'election-bag'" [dragulaModel]="candidates">
+        <div *ngFor="let candidate of candidates">
+          <candidate-card [candidate]='candidate'></candidate-card>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-xs-6">
+    <div class="card card-block dragula-section">
+      <h4 class="card-title">Ballot</h4>
+      <p class="card-text">Drag and Drop Candidates Here!</p>
+      <div class="dragula-container" [dragula]="'election-bag'" [dragulaModel]="ballot">
+        <div *ngFor="let candidate of ballot">
+          <candidate-card [candidate]='candidate'></candidate-card>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div class="row">
+  <pre class="col-xs-6">{{candidates | json}}</pre>
+  <pre class="col-xs-6">{{ballot | json}}</pre>
+</div>

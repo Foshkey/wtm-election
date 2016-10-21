@@ -77,7 +77,7 @@ module.exports = (options, data) => {
     // Log it
     logMetadata.message = `Server Request: ${options.method} ${options.host}${options.path}`, { output: req.output };
     logMetadata.method = options.method;
-    logMetadata.host = optioms.host;
+    logMetadata.host = options.host;
     logMetadata.path = options.path;
     logMetadata.output = req.output;
   });
