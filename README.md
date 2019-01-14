@@ -1,5 +1,10 @@
-# MEAN Seed
-Seed Project for MEAN Stack, now with Angular 2!
+# Archived
+
+This project has been archived and no longer maintained.
+
+# WarpToMe Election Website
+
+Website meant to assist in elections for the WarpToMe community. Utilizes STV.
 
 Built with:
 
